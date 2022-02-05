@@ -41,4 +41,7 @@ public class User {
 	
 	@Column(name="activated", columnDefinition="BOOLEAN DEFAULT 1")
 	private boolean activated;
+	
+	@Column(name="userName")
+	private String userName;
 }
