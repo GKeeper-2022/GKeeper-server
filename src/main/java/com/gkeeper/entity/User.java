@@ -28,20 +28,37 @@ public class User {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer userId;
 	
+	@Column(name="userName")
+	private String userName;
+	
+	@Column(name="nickname")
+	private String nickname;
+	
 	@Column(name="userEmail", unique=true)
 	private String userEmail;
 	
+	@Column(name="userPassword")
+	private String userpsw;
+	
+	@Column(name="gender")
+	private String gender;
+	
+	@Column(name="userYear")
+	private Integer userYear;
+	
+	@Column(name="userMonth")
+	private Integer userMonth;
+	
+	@Column(name="userDay")
+	private Integer userDay;
 	
 	@Column(name="userDate", nullable=false, updatable=false, insertable=false, columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
 	private Timestamp userDate;
 	
 	@Column(name="userActiveDate")
 	private Timestamp userActiveDate;
-
 	
 	@Column(name="activated", columnDefinition="BOOLEAN DEFAULT 1")
 	private boolean activated;
 	
-	@Column(name="userName")
-	private String userName;
 }
