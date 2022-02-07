@@ -35,10 +35,10 @@ public class Goal {
 	@Column(name="goalContent")
 	private String gaolContent;
 	
-	@Column(name="goalStart") //¸ñÇ¥ ½ÃÀÛ ³¯Â¥
+	@Column(name="goalStart") //ëª©í‘œ ì‹œì‘ ì¼ì‹œ
 	private Date goalStart; 
 	
-	@Column(name="goalEnd") //¸ñÇ¥ ¸¸·á ³¯Â¥
+	@Column(name="goalEnd") //ëª©í‘œ ë§ˆê° ì¼ì‹œ
 	private Date goalEnd; 
 	
 	@Column(name="goalStatus")
@@ -50,13 +50,13 @@ public class Goal {
 	@Column(name="goalPeriod")
 	private String goalPeriod;
 	
-	@Column(name="goalCheckTime") //TimeÀ¸·Î ÇÏ´Â°Ô ÁÁÀ»Áö StringÀ¸·Î ÇÏ´Â°Ô ÁÁÀ»Áö,,
+	@Column(name="goalCheckTime") //Timeìœ¼ë¡œ í•˜ëŠ”ê²Œ ì¢‹ì„ì§€ Stringìœ¼ë¡œ í•˜ëŠ”ê²Œ ì¢‹ì„ì§€,,
 	private Time goalCheckTime;
 	
 	@Column(name="goalAssignPublic")
 	private boolean goalAssignPublic;
 	
-	private Integer userId; //¿î¿µÀÚ ¾ÆÀÌµğ
+	private Integer userId; //ëª©í‘œ ìš´ì˜ì ì•„ì´ë””
 	
 	
 	
