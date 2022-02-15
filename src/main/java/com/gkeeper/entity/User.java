@@ -44,13 +44,13 @@ public class User {
 	private String gender;
 	
 	@Column(name="userYear")
-	private Integer userYear;
+	private Integer userYear; //생년
 	
 	@Column(name="userMonth")
-	private Integer userMonth;
+	private Integer userMonth; //월
 	
 	@Column(name="userDay")
-	private Integer userDay;
+	private Integer userDay;  //일
 	
 	@Column(name="userDate", nullable=false, updatable=false, insertable=false, columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
 	private Timestamp userDate;
@@ -60,5 +60,7 @@ public class User {
 	
 	@Column(name="activated", columnDefinition="BOOLEAN DEFAULT 1")
 	private boolean activated;
+	
+	
 	
 }
