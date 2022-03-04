@@ -1,6 +1,8 @@
 package com.gkeeper.entity;
 
 import java.sql.Timestamp;
+import java.util.Collection;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,6 +14,7 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
@@ -20,8 +23,10 @@ import lombok.Setter;
 @Setter
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 
-public class User {
+public class User{
+	
 
 	@Id
 	@Column(name="userId")
@@ -60,6 +65,7 @@ public class User {
 	
 	@Column(name="activated", columnDefinition="BOOLEAN DEFAULT 1")
 	private boolean activated;
+	
 	
 	
 	
