@@ -1,5 +1,7 @@
 package com.gkeeper.service;
 
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 
 import com.gkeeper.dto.UserDto;
@@ -16,12 +18,12 @@ public class UserService {
 	private final UserRepository userRepository;
 	
 	public boolean login(UserLoginDto loginDto) {
-		User findUser = userRepository.findByUserEmail(loginDto.getEmail()).get();
+		Optional<User> findUser = userRepository.findByUserEmail(loginDto.getEmail());
 		
-		if(findUser == null) {
+		if(findUser.isEmpty()) {
 			return false;	
 		}
-		if(!findUser.getUserpsw().equals(loginDto.getPassword())) {
+		if(!findUser.get().getUserpsw().equals(loginDto.getPassword())) {
 			return false;
 		}
 		
