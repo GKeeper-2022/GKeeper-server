@@ -1,8 +1,11 @@
 package com.gkeeper.service;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.gkeeper.dto.UserDto;
 import com.gkeeper.dto.UserLoginDto;
@@ -17,6 +20,8 @@ public class UserService {
 	
 	private final UserRepository userRepository;
 	
+	// 이 메소드에서 수정한 객체를 실제 DB에도 반영하기 위해 사용하는 annotation
+	@Transactional
 	public boolean login(UserLoginDto loginDto) {
 		Optional<User> findUser = userRepository.findByUserEmail(loginDto.getEmail());
 		
@@ -26,6 +31,10 @@ public class UserService {
 		if(!findUser.get().getUserpsw().equals(loginDto.getPassword())) {
 			return false;
 		}
+		
+		User thisUser = findUser.get();
+		Timestamp now = Timestamp.valueOf(LocalDateTime.now());
+		thisUser.setUserActiveDate(now);
 		
 		return true;
 		
